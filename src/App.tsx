@@ -45,7 +45,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         
-        <BrowserRouter basename="/">
+        <BrowserRouter>
           <div className="min-h-screen flex flex-col">
           <PreFilterModal 
             isOpen={showPreFilter} 
