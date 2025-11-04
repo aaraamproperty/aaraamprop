@@ -45,7 +45,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <BrowserRouter basename="/aaraamprop">
           <div className="min-h-screen flex flex-col">
           <PreFilterModal 
             isOpen={showPreFilter} 
