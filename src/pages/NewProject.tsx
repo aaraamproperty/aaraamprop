@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import bannerImage from "@/assets/banner.png";
 
 const NewProject = () => {
   return (
@@ -11,7 +12,7 @@ const NewProject = () => {
         {/* Banner Image */}
         <div className="w-full h-full">
           <img
-            src="/src/assets/banner.png"
+            src={bannerImage}
             alt="New Project Banner"
             className="w-full h-full object-cover"
           />
