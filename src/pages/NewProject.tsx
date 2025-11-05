@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -5,6 +6,31 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import bannerImage from "@/assets/banner1.png";
 
 const NewProject = () => {
+  // Load Google Tag
+  useEffect(() => {
+    // Add gtag script
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17706229053';
+    document.head.appendChild(gtagScript);
+
+    // Add gtag initialization
+    const gtagInit = document.createElement('script');
+    gtagInit.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17706229053');
+    `;
+    document.head.appendChild(gtagInit);
+
+    // Cleanup function
+    return () => {
+      document.head.removeChild(gtagScript);
+      document.head.removeChild(gtagInit);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       {/* Banner Section - Responsive height */}

@@ -510,16 +510,16 @@ const Home = () => {
         </div>
 
         {/* Main Content - positioned above video with proper z-index */}
-        <div className="relative z-10 h-full flex items-center pt-24 sm:pt-28 lg:pt-0">
+        <div className="relative z-10 h-full flex items-start pt-24 sm:pt-28 md:pt-24 lg:items-center lg:pt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-12 sm:py-16 lg:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center h-full py-6 sm:py-10 lg:py-20">
               
               {/* Left Side - Content */}
-              <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left">
+              <div className="space-y-3 sm:space-y-5 lg:space-y-8 text-center lg:text-left mt-4 sm:mt-6">
                 {/* Trust Badge - Enhanced for accessibility */}
                
                 {/* Main Heading - Improved contrast */}
-                <div className="space-y-3 sm:space-y-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                <div className="space-y-2 sm:space-y-3 animate-fade-in" style={{ animationDelay: "0.2s" }}>
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
                     <span className="text-white block drop-shadow-2xl">Your Dream</span>
                     <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x block drop-shadow-lg">
