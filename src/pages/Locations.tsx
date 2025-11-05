@@ -1,13 +1,124 @@
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Home, TrendingUp, Users, School, ShoppingBag, Train, Car } from "lucide-react";
 import { Link } from "react-router-dom";
+import PropertyCard from "@/components/PropertyCard";
 import heroImage from "@/assets/hero-property.jpg";
 import villaImage from "@/assets/villa-property.jpg";
 import officeImage from "@/assets/office-building.jpg";
 
 const Locations = () => {
+  const [searchParams] = useSearchParams();
+  const [selectedLocation, setSelectedLocation] = useState("");
+  const [showAllProperties, setShowAllProperties] = useState(false);
+
+  // Handle URL parameters from PreFilterModal
+  useEffect(() => {
+    const selectedLocationParam = searchParams.get('selectedLocation');
+    const showAllPropertiesParam = searchParams.get('showAllProperties');
+    
+    if (selectedLocationParam) {
+      setSelectedLocation(selectedLocationParam);
+    }
+    
+    if (showAllPropertiesParam === 'true') {
+      setShowAllProperties(true);
+    }
+  }, [searchParams]);
+
+  // Sample properties data for filtering
+  const allProperties = [
+    {
+      id: "1",
+      title: "Luxury Villa in Bandra West",
+      price: "₹8.5 Cr",
+      location: "Mumbai",
+      type: "Villa",
+      status: "Available" as const,
+      bedrooms: 4,
+      bathrooms: 5,
+      area: "3200 sq ft",
+      image: villaImage,
+      featured: true
+    },
+    {
+      id: "2",
+      title: "Commercial Office Space",
+      price: "₹12 Cr",
+      location: "Mumbai",
+      type: "Commercial",
+      status: "Available" as const,
+      bedrooms: 0,
+      bathrooms: 8,
+      area: "5000 sq ft",
+      image: officeImage,
+      featured: false
+    },
+    {
+      id: "3",
+      title: "Premium Apartments in Vashi",
+      price: "₹2.8 Cr",
+      location: "Navi Mumbai",
+      type: "Flats",
+      status: "Available" as const,
+      bedrooms: 3,
+      bathrooms: 3,
+      area: "1800 sq ft",
+      image: heroImage,
+      featured: true
+    },
+    {
+      id: "4",
+      title: "Residential Plot in Kharghar",
+      price: "₹1.2 Cr",
+      location: "Navi Mumbai",
+      type: "Plot",
+      status: "Available" as const,
+      bedrooms: 0,
+      bathrooms: 0,
+      area: "2400 sq ft",
+      image: heroImage,
+      featured: false
+    },
+    {
+      id: "5",
+      title: "Family Villa in Thane West",
+      price: "₹4.5 Cr",
+      location: "Thane",
+      type: "Villa",
+      status: "Available" as const,
+      bedrooms: 4,
+      bathrooms: 4,
+      area: "2800 sq ft",
+      image: villaImage,
+      featured: true
+    },
+    {
+      id: "6",
+      title: "Commercial Plot in Kalyan",
+      price: "₹80 Lac",
+      location: "Outskirts",
+      type: "Plot",
+      status: "Available" as const,
+      bedrooms: 0,
+      bathrooms: 0,
+      area: "1200 sq ft",
+      image: heroImage,
+      featured: false
+    }
+  ];
+
+  // Filter properties based on selected location
+  const getFilteredProperties = () => {
+    if (!selectedLocation || !showAllProperties) return [];
+    return allProperties.filter(property => property.location === selectedLocation);
+  };
+
+  const filteredProperties = getFilteredProperties();
+  
   const locations = [
     {
       id: "navi-mumbai",
@@ -297,6 +408,47 @@ const Locations = () => {
           </div>
         </section>
       ))}
+
+      {/* Filtered Properties Section - Show when redirected from PreFilterModal */}
+      {showAllProperties && selectedLocation && filteredProperties.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Properties in {selectedLocation}
+              </h2>
+              <p className="text-xl text-gray-600">
+                Discover all available properties in your selected location
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProperties.map((property) => (
+                <PropertyCard
+                  key={property.id}
+                  id={property.id}
+                  title={property.title}
+                  price={property.price}
+                  location={property.location}
+                  type={property.type}
+                  status={property.status}
+                  bedrooms={property.bedrooms}
+                  bathrooms={property.bathrooms}
+                  area={property.area}
+                  image={property.image}
+                  featured={property.featured}
+                />
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Link to="/properties">
+                <Button size="lg" className="bg-primary text-white hover:bg-primary/90">
+                  View All Properties
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-20 bg-primary">

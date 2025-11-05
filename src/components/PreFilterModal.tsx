@@ -94,7 +94,8 @@ const PreFilterModal = ({ isOpen, onClose }: PreFilterModalProps) => {
   const handlePropertyTypeSelect = (type: string) => {
     setSelectedPropertyType(type);
     setTimeout(() => {
-      navigate(`/properties?location=${selectedLocation}&type=${type}`);
+      // Redirect to locations page with the selected location and show all properties
+      navigate(`/locations?selectedLocation=${selectedLocation}&showAllProperties=true`);
       onClose();
     }, 500);
   };
