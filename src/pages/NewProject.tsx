@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import bannerImage from "@/assets/banner1.png";
+import bannerImageMobile from "@/assets/Banner2.png";
 
 const NewProject = () => {
   // Load Google Tag
@@ -34,9 +35,17 @@ const NewProject = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       {/* Banner Section - Responsive height */}
-      <section className="relative h-[35vh] sm:h-[30vh] md:h-[80vh] lg:h-[85vh] xl:h-screen overflow-hidden mt-14 sm:mt-16 lg:mt-18">
-        {/* Banner Image */}
-        <div className="w-full h-full">
+      <section className="relative h-[900px] sm:h-[85vh] md:h-[80vh] lg:h-[85vh] xl:h-screen overflow-hidden mt-14 sm:mt-16 lg:mt-18">
+        {/* Banner Image - Mobile (banner2) */}
+        <div className="w-full h-full md:hidden">
+          <img
+            src={bannerImageMobile}
+            alt="Plan M Banner"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        {/* Banner Image - Desktop (banner1) */}
+        <div className="w-full h-full hidden md:block">
           <img
             src={bannerImage}
             alt="Plan M Banner"
@@ -154,24 +163,24 @@ const NewProject = () => {
                 REACH OUT TO US TO KNOW MORE FOR OFFERS AT-
               </h3>
               
-              <div className="flex flex-row justify-center items-center gap-4 md:gap-6 mb-8">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-8">
                 <a 
                   href="tel:+918104124183" 
-                  className="group flex items-center justify-center bg-gradient-to-r from-primary to-accent px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="group flex items-center justify-center bg-gradient-to-r from-primary to-accent px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full md:w-auto"
                 >
                   <span className="text-lg md:text-xl font-bold text-white">+91-81041 24183</span>
                 </a>
                 
                 <a 
                   href="tel:+919336636577" 
-                  className="group flex items-center justify-center bg-gradient-to-r from-accent to-primary px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="group flex items-center justify-center bg-gradient-to-r from-accent to-primary px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full md:w-auto"
                 >
                   <span className="text-lg md:text-xl font-bold text-white">+91 93366 36577</span>
                 </a>
                 
                 <a 
                   href="tel:+918779296362" 
-                  className="group flex items-center justify-center bg-gradient-to-r from-primary to-accent px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="group flex items-center justify-center bg-gradient-to-r from-primary to-accent px-6 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full md:w-auto"
                 >
                   <span className="text-lg md:text-xl font-bold text-white">+91 87792 96362</span>
                 </a>
