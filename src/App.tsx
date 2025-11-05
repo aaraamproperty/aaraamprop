@@ -24,7 +24,7 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [showPreFilter, setShowPreFilter] = useState(false); // Temporarily disable to test
+  const [showPreFilter, setShowPreFilter] = useState(true);
 
   // Check if user has already seen the modal in this session
   useEffect(() => {
@@ -39,21 +39,20 @@ const App = () => {
     sessionStorage.setItem('preFilterModalSeen', 'true');
   };
 
-  try {
-    return (
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          
-          <BrowserRouter>
-            <div className="min-h-screen flex flex-col">
-            <PreFilterModal 
-              isOpen={showPreFilter} 
-              onClose={handleClosePreFilter} 
-            />
-            <Header />
-            <main className="flex-1">
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        
+        <BrowserRouter>
+          <div className="min-h-screen flex flex-col">
+          <PreFilterModal 
+            isOpen={showPreFilter} 
+            onClose={handleClosePreFilter} 
+          />
+          <Header />
+          <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -77,16 +76,6 @@ const App = () => {
       </TooltipProvider>
     </QueryClientProvider>
   );
-  } catch (error) {
-    console.error('App Error:', error);
-    return (
-      <div style={{ padding: '20px', color: 'red', fontSize: '18px' }}>
-        <h1>Something went wrong!</h1>
-        <p>Error: {error.message}</p>
-        <p>Check the console for more details.</p>
-      </div>
-    );
-  }
 };
 
 export default App;
