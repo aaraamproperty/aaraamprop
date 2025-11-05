@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PreFilterModal from "./components/PreFilterModal";
@@ -23,11 +23,8 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const AppContent = () => {
-  const location = useLocation();
+const App = () => {
   const [showPreFilter, setShowPreFilter] = useState(true);
-
-  console.log("App loading, current path:", location.pathname);
 
   // Check if user has already seen the modal in this session
   useEffect(() => {
@@ -37,52 +34,28 @@ const AppContent = () => {
     }
   }, []);
 
-  // Check if we're on the New Project page
-  const isNewProjectPage = location.pathname === '/new-project';
+  // Check current path and hide modal on new-project page
+  useEffect(() => {
+    const checkPath = () => {
+      if (window.location.pathname === '/new-project') {
+        setShowPreFilter(false);
+      }
+    };
+    
+    checkPath();
+    // Listen for navigation changes
+    window.addEventListener('popstate', checkPath);
+    
+    return () => {
+      window.removeEventListener('popstate', checkPath);
+    };
+  }, []);
 
   const handleClosePreFilter = () => {
     setShowPreFilter(false);
     sessionStorage.setItem('preFilterModalSeen', 'true');
   };
 
-  console.log("Rendering AppContent...");
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      {/* Only show PreFilterModal if NOT on New Project page */}
-      {!isNewProjectPage && (
-        <PreFilterModal 
-          isOpen={showPreFilter} 
-          onClose={handleClosePreFilter} 
-        />
-      )}
-      <Header />
-      <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/properties" element={<Properties />} />
-          <Route path="/properties/:id" element={<PropertyDetail />} />
-          <Route path="/locations" element={<Locations />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/book/:id" element={<BookProperty />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/articles/:id" element={<ArticleDetail />} />
-          <Route path="/new-project" element={<NewProject />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
-const App = () => {
-  console.log("App component starting...");
-  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -90,7 +63,31 @@ const App = () => {
         <Sonner />
         
         <BrowserRouter>
-          <AppContent />
+          <div className="min-h-screen flex flex-col">
+            <PreFilterModal 
+              isOpen={showPreFilter && window.location.pathname !== '/new-project'} 
+              onClose={handleClosePreFilter} 
+            />
+            <Header />
+            <main className="flex-1">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/properties" element={<Properties />} />
+                <Route path="/properties/:id" element={<PropertyDetail />} />
+                <Route path="/locations" element={<Locations />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/book/:id" element={<BookProperty />} />
+                <Route path="/articles" element={<Articles />} />
+                <Route path="/articles/:id" element={<ArticleDetail />} />
+                <Route path="/new-project" element={<NewProject />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
