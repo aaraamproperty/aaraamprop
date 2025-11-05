@@ -94,8 +94,18 @@ const PreFilterModal = ({ isOpen, onClose }: PreFilterModalProps) => {
   const handlePropertyTypeSelect = (type: string) => {
     setSelectedPropertyType(type);
     setTimeout(() => {
-      // Redirect to locations page with the selected location and show all properties
-      navigate(`/locations?selectedLocation=${selectedLocation}&showAllProperties=true`);
+      // Map location IDs to proper location names for filtering
+      const locationMap: { [key: string]: string } = {
+        'mumbai': 'Mumbai',
+        'navi-mumbai': 'Navi Mumbai',
+        'thane': 'Thane',
+        'outskirts': 'Outskirts'
+      };
+      
+      const locationName = locationMap[selectedLocation] || selectedLocation;
+      
+      // Redirect to properties page with selected location and property type
+      navigate(`/properties?location=${encodeURIComponent(locationName)}&type=${type}`);
       onClose();
     }, 500);
   };
