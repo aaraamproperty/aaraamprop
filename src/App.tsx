@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import PreFilterModal from "./components/PreFilterModal";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Properties from "./pages/Properties";
@@ -24,38 +22,6 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [showPreFilter, setShowPreFilter] = useState(true);
-
-  // Check if user has already seen the modal in this session
-  useEffect(() => {
-    const hasSeenModal = sessionStorage.getItem('preFilterModalSeen');
-    if (hasSeenModal) {
-      setShowPreFilter(false);
-    }
-  }, []);
-
-  // Check current path and hide modal on new-project page
-  useEffect(() => {
-    const checkPath = () => {
-      if (window.location.pathname === '/new-project') {
-        setShowPreFilter(false);
-      }
-    };
-    
-    checkPath();
-    // Listen for navigation changes
-    window.addEventListener('popstate', checkPath);
-    
-    return () => {
-      window.removeEventListener('popstate', checkPath);
-    };
-  }, []);
-
-  const handleClosePreFilter = () => {
-    setShowPreFilter(false);
-    sessionStorage.setItem('preFilterModalSeen', 'true');
-  };
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -64,10 +30,6 @@ const App = () => {
         
         <BrowserRouter>
           <div className="min-h-screen flex flex-col">
-            <PreFilterModal 
-              isOpen={showPreFilter && window.location.pathname !== '/new-project'} 
-              onClose={handleClosePreFilter} 
-            />
             <Header />
             <main className="flex-1">
               <Routes>
