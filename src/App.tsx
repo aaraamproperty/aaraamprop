@@ -27,6 +27,8 @@ const AppContent = () => {
   const location = useLocation();
   const [showPreFilter, setShowPreFilter] = useState(true);
 
+  console.log("App loading, current path:", location.pathname);
+
   // Check if user has already seen the modal in this session
   useEffect(() => {
     const hasSeenModal = sessionStorage.getItem('preFilterModalSeen');
@@ -42,6 +44,8 @@ const AppContent = () => {
     setShowPreFilter(false);
     sessionStorage.setItem('preFilterModalSeen', 'true');
   };
+
+  console.log("Rendering AppContent...");
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -77,6 +81,8 @@ const AppContent = () => {
 };
 
 const App = () => {
+  console.log("App component starting...");
+  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
