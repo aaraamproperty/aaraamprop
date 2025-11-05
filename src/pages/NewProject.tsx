@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import bannerImage from "@/assets/banner.png";
+import bannerImage from "@/assets/banner1.png";
 
 const NewProject = () => {
   return (
@@ -71,14 +71,17 @@ const NewProject = () => {
                         <SelectValue placeholder="I am looking for" />
                       </SelectTrigger>
                       <SelectContent className="rounded-xl border-2 border-primary/20">
-                        <SelectItem value="showroom" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
-                          Showroom
-                        </SelectItem>
                         <SelectItem value="office" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
                           Office
                         </SelectItem>
-                        <SelectItem value="commercial" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
-                          Other Commercial Property
+                        <SelectItem value="shop" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
+                          Shop
+                        </SelectItem>
+                        <SelectItem value="retail" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
+                          Retail
+                        </SelectItem>
+                        <SelectItem value="showroom" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
+                          Showroom
                         </SelectItem>
                       </SelectContent>
                     </Select>
@@ -275,45 +278,45 @@ const NewProject = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             
             {/* First Row - Taller Cards without tags */}
-            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+            <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
               <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-1.jpg"
                   alt="Cafeteria"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
             </div>
 
-            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+            <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
               <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-2.jpg"
                   alt="Gymnasium"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
             </div>
 
-            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+            <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
               <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-3.jpg"
                   alt="Food Court"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
             </div>
 
-            <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+            <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
               <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-4.jpg"
                   alt="Spa"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
