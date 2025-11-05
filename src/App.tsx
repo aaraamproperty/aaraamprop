@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PreFilterModal from "./components/PreFilterModal";
@@ -23,7 +23,8 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => {
+const AppContent = () => {
+  const location = useLocation();
   const [showPreFilter, setShowPreFilter] = useState(true);
 
   // Check if user has already seen the modal in this session
@@ -34,11 +35,48 @@ const App = () => {
     }
   }, []);
 
+  // Check if we're on the New Project page
+  const isNewProjectPage = location.pathname === '/new-project';
+
   const handleClosePreFilter = () => {
     setShowPreFilter(false);
     sessionStorage.setItem('preFilterModalSeen', 'true');
   };
 
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* Only show PreFilterModal if NOT on New Project page */}
+      {!isNewProjectPage && (
+        <PreFilterModal 
+          isOpen={showPreFilter} 
+          onClose={handleClosePreFilter} 
+        />
+      )}
+      <Header />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/properties" element={<Properties />} />
+          <Route path="/properties/:id" element={<PropertyDetail />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/book/:id" element={<BookProperty />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:id" element={<ArticleDetail />} />
+          <Route path="/new-project" element={<NewProject />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -46,32 +84,7 @@ const App = () => {
         <Sonner />
         
         <BrowserRouter>
-          <div className="min-h-screen flex flex-col">
-          <PreFilterModal 
-            isOpen={showPreFilter} 
-            onClose={handleClosePreFilter} 
-          />
-          <Header />
-          <main className="flex-1">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/properties" element={<Properties />} />
-              <Route path="/properties/:id" element={<PropertyDetail />} />
-              <Route path="/locations" element={<Locations />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/book/:id" element={<BookProperty />} />
-              <Route path="/articles" element={<Articles />} />
-              <Route path="/articles/:id" element={<ArticleDetail />} />
-              <Route path="/new-project" element={<NewProject />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+          <AppContent />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
