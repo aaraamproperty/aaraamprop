@@ -8,7 +8,7 @@ export default defineConfig(({ command }) => ({
     host: "::",
     port: 8080,
   },
-  base: command === 'build' ? '/aaraamprop/' : '/',
+  base: "/",
   plugins: [react()],
   resolve: {
     alias: {
