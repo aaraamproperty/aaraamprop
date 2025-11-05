@@ -279,7 +279,7 @@ const NewProject = () => {
             
             {/* First Row - Taller Cards without tags */}
             <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-              <div className="aspect-[3/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+              <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-1.jpg"
                   alt="Cafeteria"
@@ -290,7 +290,7 @@ const NewProject = () => {
             </div>
 
             <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-              <div className="aspect-[3/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+              <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-2.jpg"
                   alt="Gymnasium"
@@ -301,7 +301,7 @@ const NewProject = () => {
             </div>
 
             <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-              <div className="aspect-[3/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+              <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-3.jpg"
                   alt="Food Court"
@@ -312,7 +312,7 @@ const NewProject = () => {
             </div>
 
             <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-              <div className="aspect-[3/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+              <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-4.jpg"
                   alt="Spa"
