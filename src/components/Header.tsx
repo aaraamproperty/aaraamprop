@@ -9,14 +9,14 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const navigation = [
+  const navItems = [
     { name: "HOME", href: "/" },
-    { name: "ABOUT US", href: "/about" },
+    { name: "ABOUT", href: "/about" },
     { name: "PROPERTIES", href: "/properties" },
-    { name: "NEW PROJECT", href: "/new-project" },
+    { name: "PLAN M", href: "/new-project" },
     { name: "LOCATIONS", href: "/locations" },
     { name: "ARTICLES", href: "/articles" },
-    { name: "CONTACT US", href: "/contact" },
+    { name: "CONTACT", href: "/contact" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -24,11 +24,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg border-b border-primary/10">
       {/* Dynamic Navigation */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-18">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
           {/* Brand Logo (optimized sizing & accessibility) */}
           <Link to="/" className="flex items-center group" aria-label="Aaraam Properties Home">
-            <div className="relative flex items-center h-12 lg:h-14">
+            <div className="relative flex items-center h-10 sm:h-12 lg:h-14">
               {/* Use picture for future WebP support (can add a .webp later) */}
               <picture>
                 {/* <source srcSet={logoWebp} type="image/webp" /> */}
@@ -40,7 +40,7 @@ const Header = () => {
                   decoding="async"
                   fetchPriority="high"
                   draggable="false"
-                  className="h-full w-auto max-h-14 lg:max-h-16 object-contain select-none drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  className="h-full w-auto max-h-10 sm:max-h-12 lg:max-h-16 object-contain select-none drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
                 />
               </picture>
             </div>
@@ -48,7 +48,7 @@ const Header = () => {
 
           {/* Dynamic Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
-            {navigation.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
@@ -79,26 +79,27 @@ const Header = () => {
 
           {/* Dynamic Mobile Menu Button */}
           <button
-            className="lg:hidden relative p-3 rounded-xl transition-all duration-300 border bg-slate-100 hover:bg-primary hover:text-white border-slate-200"
+            className="lg:hidden relative p-2 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 border bg-slate-100 hover:bg-primary hover:text-white border-slate-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
-            <div className="relative w-6 h-6">
-              <span className={`absolute block h-0.5 w-6 bg-slate-700 drop-shadow-lg transform transition-all duration-300 ${isMenuOpen ? 'rotate-45 top-3' : 'top-1'}`}></span>
-              <span className={`absolute block h-0.5 w-6 bg-slate-700 drop-shadow-lg transform transition-all duration-300 top-3 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-              <span className={`absolute block h-0.5 w-6 bg-slate-700 drop-shadow-lg transform transition-all duration-300 ${isMenuOpen ? '-rotate-45 top-3' : 'top-5'}`}></span>
+            <div className="relative w-5 h-5 sm:w-6 sm:h-6">
+              <span className={`absolute block h-0.5 w-5 sm:w-6 bg-slate-700 drop-shadow-lg transform transition-all duration-300 ${isMenuOpen ? 'rotate-45 top-2.5 sm:top-3' : 'top-1'}`}></span>
+              <span className={`absolute block h-0.5 w-5 sm:w-6 bg-slate-700 drop-shadow-lg transform transition-all duration-300 top-2.5 sm:top-3 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+              <span className={`absolute block h-0.5 w-5 sm:w-6 bg-slate-700 drop-shadow-lg transform transition-all duration-300 ${isMenuOpen ? '-rotate-45 top-2.5 sm:top-3' : 'top-4 sm:top-5'}`}></span>
             </div>
           </button>
         </div>
 
         {/* Dynamic Mobile Navigation */}
         <div className={`lg:hidden transition-all duration-500 ease-out overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="py-6 rounded-2xl mt-4 border bg-white/95 backdrop-blur-xl border-slate-200">
-            <nav className="flex flex-col space-y-2">
-              {navigation.map((item) => (
+          <div className="py-4 sm:py-6 rounded-xl sm:rounded-2xl mt-3 sm:mt-4 border bg-white/95 backdrop-blur-xl border-slate-200">
+            <nav className="flex flex-col space-y-1 sm:space-y-2">
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-6 py-4 text-base font-bold transition-all duration-300 rounded-xl mx-4 ${isActive(item.href) ? 'text-white bg-gradient-to-r from-primary to-accent shadow-lg' : 'text-slate-700 hover:text-primary hover:bg-primary/10'}`}
+                  className={`px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-bold transition-all duration-300 rounded-lg sm:rounded-xl mx-3 sm:mx-4 ${isActive(item.href) ? 'text-white bg-gradient-to-r from-primary to-accent shadow-lg' : 'text-slate-700 hover:text-primary hover:bg-primary/10'}`}
                   onClick={() => {
                     setIsMenuOpen(false);
                     window.scrollTo(0, 0);
@@ -107,9 +108,9 @@ const Header = () => {
                   <span>{item.name}</span>
                 </Link>
               ))}
-              <div className="px-4 pt-4">
+              <div className="px-3 sm:px-4 pt-3 sm:pt-4">
                 <a href="tel:+919876543210" className="block">
-                  <Button className="w-full py-4 font-bold shadow-xl rounded-full border bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-white border-transparent">
+                  <Button className="w-full py-3 sm:py-4 text-sm sm:text-base font-bold shadow-xl rounded-full border bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-white border-transparent">
                     <span>Book Site Visit</span>
                   </Button>
                 </a>

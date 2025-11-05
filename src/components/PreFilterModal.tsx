@@ -116,43 +116,43 @@ const PreFilterModal = ({ isOpen, onClose }: PreFilterModalProps) => {
   const currentPropertyImage = propertyTypes.find(type => type.id === hoveredPropertyType)?.image || "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop&crop=entropy";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg p-4 pt-24">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg p-2 sm:p-4 pt-16 sm:pt-20 lg:pt-24">
       {/* Main Modal Container */}
-      <div className="relative w-full max-w-4xl h-[70vh] max-h-[500px] min-h-[450px] bg-card rounded-3xl shadow-2xl overflow-hidden animate-scale-in">
+      <div className="relative w-full max-w-4xl h-[80vh] sm:h-[70vh] max-h-[600px] sm:max-h-[500px] min-h-[400px] sm:min-h-[450px] bg-card rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden animate-scale-in">
         
         {step === 1 && (
           <div className="flex flex-col lg:flex-row h-full animate-fade-in">
             {/* Left Side - Location Grid */}
-            <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col justify-center">
-              <div className="mb-4">
-                <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-2">
+            <div className="w-full lg:w-1/2 p-3 sm:p-4 lg:p-6 flex flex-col justify-center">
+              <div className="mb-3 sm:mb-4">
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-2">
                   Welcome to Araam Dream Dwellings
                 </h2>
-                <p className="text-xs text-muted-foreground mb-1">Step 1 of 2</p>
-                <h3 className="text-base lg:text-lg font-semibold mb-2">Choose Your Location</h3>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs sm:text-sm text-muted-foreground mb-1">Step 1 of 2</p>
+                <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2">Choose Your Location</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   Select your preferred area to discover amazing properties
                 </p>
               </div>
 
               {/* 2x2 Grid Layout */}
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 {locations.map((location) => (
                   <button
                     key={location.id}
                     onMouseEnter={() => setHoveredLocation(location.id)}
                     onClick={() => handleLocationSelect(location.id)}
-                    className={`text-center p-3 rounded-lg border-2 transition-all duration-300 group ${
+                    className={`text-center p-2 sm:p-3 rounded-lg border-2 transition-all duration-300 group ${
                       hoveredLocation === location.id 
                         ? 'border-primary bg-primary/5 shadow-md' 
                         : 'border-border hover:border-primary/50'
                     }`}
                   >
                     <div className="flex flex-col items-center">
-                      <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
+                      <h4 className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
                         {location.name}
                       </h4>
-                      <p className="text-xs text-muted-foreground leading-tight line-clamp-2">
+                      <p className="text-xs text-muted-foreground leading-tight line-clamp-2 hidden sm:block">
                         {location.description}
                       </p>
                       <ArrowRight className={`w-3 h-3 mt-1 transition-all duration-300 ${
@@ -202,14 +202,14 @@ const PreFilterModal = ({ isOpen, onClose }: PreFilterModalProps) => {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Building className="w-6 h-6 text-primary" />
                 </div>
-                <p className="text-sm text-muted-foreground mb-1">Step 2 of 2</p>
-                <h3 className="text-xl font-semibold mb-2">Choose Property Type</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs sm:text-sm text-muted-foreground mb-1">Step 2 of 2</p>
+                <h3 className="text-sm sm:text-base lg:text-xl font-semibold mb-2">Choose Property Type</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   What type of property are you looking for?
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 {propertyTypes.map((type) => {
                   const IconComponent = type.icon;
                   return (
@@ -217,17 +217,17 @@ const PreFilterModal = ({ isOpen, onClose }: PreFilterModalProps) => {
                       key={type.id}
                       onMouseEnter={() => setHoveredPropertyType(type.id)}
                       onClick={() => handlePropertyTypeSelect(type.id)}
-                      className={`p-3 rounded-xl border-2 transition-all duration-300 group ${
+                      className={`p-2 sm:p-3 rounded-xl border-2 transition-all duration-300 group ${
                         hoveredPropertyType === type.id 
                           ? 'border-primary bg-primary/5 shadow-lg' 
                           : 'border-border hover:border-primary/50'
                       } ${selectedPropertyType === type.id ? 'bg-primary text-primary-foreground' : ''}`}
                     >
-                      <IconComponent className={`w-5 h-5 mb-2 transition-colors ${
+                      <IconComponent className={`w-4 h-4 sm:w-5 sm:h-5 mb-1 sm:mb-2 transition-colors ${
                         hoveredPropertyType === type.id ? 'text-primary' : 'text-muted-foreground'
                       }`} />
-                      <h4 className="font-semibold text-sm mb-1">{type.name}</h4>
-                      <p className="text-xs text-muted-foreground">{type.description}</p>
+                      <h4 className="font-semibold text-xs sm:text-sm mb-1">{type.name}</h4>
+                      <p className="text-xs text-muted-foreground hidden sm:block">{type.description}</p>
                     </button>
                   );
                 })}

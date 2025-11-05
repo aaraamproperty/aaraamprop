@@ -477,7 +477,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Enhanced Hero Section with Background Video */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen h-screen overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video
@@ -510,44 +510,44 @@ const Home = () => {
         </div>
 
         {/* Main Content - positioned above video with proper z-index */}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4   sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-20">
+        <div className="relative z-10 h-full flex items-center pt-24 sm:pt-28 lg:pt-0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-12 sm:py-16 lg:py-20">
               
               {/* Left Side - Content */}
-              <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
+              <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left">
                 {/* Trust Badge - Enhanced for accessibility */}
                
                 {/* Main Heading - Improved contrast */}
-                <div className="space-y-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                <div className="space-y-3 sm:space-y-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
                     <span className="text-white block drop-shadow-2xl">Your Dream</span>
                     <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x block drop-shadow-lg">
                       Property Awaits
                     </span>
                   </h1>
-                  <p className="text-lg sm:text-xl lg:text-1xl text-white/90 max-w-2xl leading-relaxed drop-shadow-lg">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-1xl text-white/90 max-w-2xl leading-relaxed drop-shadow-lg px-4 sm:px-0">
                     Experience luxury living with premium properties across Mumbai, Navi Mumbai & Thane. 
                     Where your aspirations meet reality.
                   </p>
                 </div>
 
                 {/* Unified CTA Buttons - Same height and styling */}
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.4s" }}>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 justify-center lg:justify-start animate-fade-in px-4 sm:px-0" style={{ animationDelay: "0.4s" }}>
                   <Link to="/properties" className="w-full sm:w-auto">
                     <Button 
                       size="lg" 
-                      className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-6 text-base sm:text-lg bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-500 shadow-2xl hover:shadow-primary/25 focus:ring-4 focus:ring-primary/30 group rounded-full border-0"
+                      className="w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-lg bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-500 shadow-2xl hover:shadow-primary/25 focus:ring-4 focus:ring-primary/30 group rounded-full border-0"
                     >
-                      <Search className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
+                      <Search className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
                       Explore Properties
-                      <ArrowRight className="ml-2 sm:ml-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-2 transition-transform" />
+                      <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:translate-x-2 transition-transform" />
                     </Button>
                   </Link>
                   <Link to="/contact" className="w-full sm:w-auto">
                     <Button 
                       size="lg" 
-                      className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-6 text-base sm:text-lg bg-white/20 hover:bg-white/30 text-white border-2 border-white/40 hover:border-white/60 backdrop-blur-md transition-all duration-500 shadow-2xl hover:shadow-white/25 focus:ring-4 focus:ring-white/30 rounded-full"
+                      className="w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-6 text-sm sm:text-base lg:text-lg bg-white/20 hover:bg-white/30 text-white border-2 border-white/40 hover:border-white/60 backdrop-blur-md transition-all duration-500 shadow-2xl hover:shadow-white/25 focus:ring-4 focus:ring-white/30 rounded-full"
                     >
                       <Phone className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6" />
                       Book Site Visit

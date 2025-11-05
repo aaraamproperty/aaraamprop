@@ -63,22 +63,22 @@ const PropertyCard = ({
           <img 
             src={image} 
             alt={title}
-            className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            className="w-full h-48 sm:h-64 lg:h-72 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
           />
           
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           
           {/* Top Badges */}
-          <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+          <div className="absolute top-3 sm:top-4 left-3 sm:left-4 flex flex-wrap gap-1 sm:gap-2">
             {featured && (
-              <Badge className="bg-gradient-to-r from-accent to-accent/80 text-white shadow-lg border-0 px-3 py-1 text-xs font-semibold">
+              <Badge className="bg-gradient-to-r from-accent to-accent/80 text-white shadow-lg border-0 px-2 sm:px-3 py-1 text-xs font-semibold">
                 ⭐ Featured
               </Badge>
             )}
             <Badge 
               className={`
-                px-3 py-1 text-xs font-semibold shadow-lg border-0
+                px-2 sm:px-3 py-1 text-xs font-semibold shadow-lg border-0
                 ${status === "Available" 
                   ? "bg-gradient-to-r from-green-500 to-green-600 text-white" 
                   : status === "Sold" 
@@ -92,56 +92,56 @@ const PropertyCard = ({
           </div>
           
           {/* Property Type Badge */}
-          <div className="absolute top-4 right-4">
-            <Badge className="bg-white/95 text-gray-700 backdrop-blur-sm shadow-lg border-0 px-3 py-1 text-xs font-semibold">
+          <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+            <Badge className="bg-white/95 text-gray-700 backdrop-blur-sm shadow-lg border-0 px-2 sm:px-3 py-1 text-xs font-semibold">
               {type}
             </Badge>
           </div>
 
           {/* Wishlist Button */}
-          <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
             <Button 
               size="icon" 
-              className="h-10 w-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 shadow-lg hover:scale-110 transition-all duration-300"
+              className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 shadow-lg hover:scale-110 transition-all duration-300"
             >
-              <Heart className="h-4 w-4 text-white" />
+              <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
             </Button>
           </div>
         </div>
 
         {/* Content Section - Simplified */}
-        <div className="p-6 space-y-4">
+        <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
           {/* Location */}
           <div className="flex items-center gap-2 text-gray-600">
-            <MapPin className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium">{location}</span>
+            <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0" />
+            <span className="text-xs sm:text-sm font-medium line-clamp-1">{location}</span>
           </div>
           
           {/* Title */}
-          <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 leading-tight line-clamp-2">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 leading-tight line-clamp-2">
             {title}
           </h3>
           
           {/* Price */}
           <div>
             <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Price</p>
-            <p className="text-2xl font-bold text-primary">{price}</p>
+            <p className="text-xl sm:text-2xl font-bold text-primary">{price}</p>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-3 pt-4">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4">
             <Button 
               onClick={() => setIsModalOpen(true)}
               variant="outline" 
-              className="flex-1 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold"
+              className="flex-1 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold text-sm sm:text-base py-2 sm:py-3"
             >
-              <Eye className="w-4 h-4 mr-2" />
+              <Eye className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               View Details
             </Button>
             <a href="tel:+919876543210" className="flex-1">
-              <Button className="w-full rounded-xl bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-semibold group">
+              <Button className="w-full rounded-xl bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 font-semibold group text-sm sm:text-base py-2 sm:py-3">
                 Book Now
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
           </div>

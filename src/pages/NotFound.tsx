@@ -75,7 +75,7 @@ const NotFound = () => {
                 variant="outline" 
                 className="px-8 py-4 text-lg font-bold border-2 border-accent text-accent hover:bg-accent hover:text-white rounded-full transition-all duration-300 min-w-[200px]"
               >
-                ✨ New Projects
+                ✨ Plan M
               </Button>
             </Link>
             <Link to="/contact">
@@ -99,7 +99,7 @@ const NotFound = () => {
               { name: "Properties", path: "/properties", icon: "🏢" },
               { name: "Locations", path: "/locations", icon: "📍" },
               { name: "Articles", path: "/articles", icon: "📰" },
-              { name: "New Project", path: "/new-project", icon: "✨" },
+              { name: "Plan M", path: "/new-project", icon: "✨" },
               { name: "Contact", path: "/contact", icon: "📞" },
               { name: "Privacy", path: "/privacy-policy", icon: "🔒" }
             ].map((link, index) => (

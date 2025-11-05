@@ -573,16 +573,16 @@ const Properties = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-  <section className="bg-accent pt-32 lg:pt-36 pb-20 text-accent-foreground">
-        <div className="max-w-7xl mx-auto px-4">
+  <section className="bg-accent pt-24 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 lg:pb-20 text-accent-foreground">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center">
-            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+            <Badge className="mb-3 sm:mb-4 bg-white/20 text-white border-white/30 text-xs sm:text-sm">
               Our Properties
             </Badge>
-            <h1 className="text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               Find Your Perfect Property
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto px-4">
               Explore our extensive collection of premium properties across Mumbai, 
               Navi Mumbai, and Thane. From luxury villas to modern row houses and prime plots.
             </p>
@@ -591,42 +591,42 @@ const Properties = () => {
       </section>
 
       {/* Category Tabs */}
-      <section className="py-8 bg-background/50 border-b">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Browse by Location</h2>
-            <p className="text-lg text-muted-foreground">
+      <section className="py-6 sm:py-8 bg-background/50 border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">Browse by Location</h2>
+            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground">
               Explore properties in your preferred location
             </p>
           </div>
           
           <div className="flex justify-center">
-            <div className="flex bg-muted rounded-lg p-2 gap-2">
+            <div className="flex flex-wrap sm:flex-nowrap bg-muted rounded-lg p-1 sm:p-2 gap-1 sm:gap-2 max-w-full overflow-x-auto">
               <Button
                 variant={activeCategory === "all" ? "default" : "ghost"}
                 onClick={() => handleCategoryChange("all")}
-                className="rounded-md"
+                className="rounded-md text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 whitespace-nowrap"
               >
                 All Properties
               </Button>
               <Button
                 variant={activeCategory === "mumbai" ? "default" : "ghost"}
                 onClick={() => handleCategoryChange("mumbai")}
-                className="rounded-md"
+                className="rounded-md text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 whitespace-nowrap"
               >
                 Mumbai
               </Button>
               <Button
                 variant={activeCategory === "navi-mumbai" ? "default" : "ghost"}
                 onClick={() => handleCategoryChange("navi-mumbai")}
-                className="rounded-md"
+                className="rounded-md text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 whitespace-nowrap"
               >
                 Navi Mumbai
               </Button>
               <Button
                 variant={activeCategory === "thane" ? "default" : "ghost"}
                 onClick={() => handleCategoryChange("thane")}
-                className="rounded-md"
+                className="rounded-md text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 whitespace-nowrap"
               >
                 Thane
               </Button>
@@ -643,17 +643,17 @@ const Properties = () => {
       </section>
 
       {/* Search and Filters */}
-      <section className="py-8 bg-background border-b">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-6 sm:py-8 bg-background border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
             {/* Search */}
-            <div className="flex-1 max-w-md">
+            <div className="flex-1 w-full lg:max-w-md">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
                 <input
                   type="text"
                   placeholder="Search properties..."
-                  className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-3 text-sm sm:text-base border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   value={filters.location}
                   onChange={(e) => setFilters({...filters, location: e.target.value})}
                 />
@@ -664,7 +664,7 @@ const Properties = () => {
             <Button 
               variant="outline" 
               onClick={() => setShowFilters(!showFilters)}
-              className="lg:hidden"
+              className="lg:hidden w-full sm:w-auto"
             >
               <SlidersHorizontal className="h-4 w-4 mr-2" />
               Filters
@@ -673,7 +673,7 @@ const Properties = () => {
             {/* Desktop Filters */}
             <div className="hidden lg:flex gap-4">
               <select 
-                className="px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="px-3 sm:px-4 py-2 text-sm sm:text-base border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                 value={filters.type}
                 onChange={(e) => setFilters({...filters, type: e.target.value})}
               >
@@ -685,7 +685,7 @@ const Properties = () => {
               </select>
 
               <select 
-                className="px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="px-3 sm:px-4 py-2 text-sm sm:text-base border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                 value={filters.status}
                 onChange={(e) => setFilters({...filters, status: e.target.value})}
               >
@@ -700,7 +700,7 @@ const Properties = () => {
               </Button>
             </div>
 
-            <div className="text-sm text-muted-foreground">
+            <div className="text-xs sm:text-sm text-muted-foreground text-center lg:text-left">
               {filteredProperties.length} properties found 
               {activeCategory !== "all" && (
                 <span className="capitalize"> in {activeCategory.replace("-", " ")}</span>
@@ -710,10 +710,10 @@ const Properties = () => {
 
           {/* Mobile Filters */}
           {showFilters && (
-            <div className="lg:hidden mt-4 p-4 bg-muted/30 rounded-lg">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="lg:hidden mt-4 p-3 sm:p-4 bg-muted/30 rounded-lg">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <select 
-                  className="px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="px-3 sm:px-4 py-2 text-sm sm:text-base border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   value={filters.type}
                   onChange={(e) => setFilters({...filters, type: e.target.value})}
                 >
@@ -725,7 +725,7 @@ const Properties = () => {
                 </select>
 
                 <select 
-                  className="px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="px-3 sm:px-4 py-2 text-sm sm:text-base border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   value={filters.status}
                   onChange={(e) => setFilters({...filters, status: e.target.value})}
                 >
@@ -740,12 +740,12 @@ const Properties = () => {
       </section>
 
       {/* Properties Grid */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {filteredProperties.length === 0 ? (
-            <div className="text-center py-12">
-              <h3 className="text-2xl font-semibold mb-4">No properties found</h3>
-              <p className="text-muted-foreground mb-6">
+            <div className="text-center py-8 sm:py-12">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">No properties found</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">
                 Try adjusting your search criteria or browse all properties
               </p>
               <Button onClick={() => setFilters({location: "", type: "", priceRange: "", status: "", category: ""})}>
@@ -753,7 +753,7 @@ const Properties = () => {
               </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {filteredProperties.map((property) => (
                 <PropertyCard key={property.id} {...property} />
               ))}
@@ -764,9 +764,9 @@ const Properties = () => {
 
       {/* Load More */}
       {filteredProperties.length > 0 && (
-        <section className="py-8 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <Button variant="outline" size="lg">
+        <section className="py-6 sm:py-8 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <Button variant="outline" size="lg" className="w-full sm:w-auto">
               Load More Properties
             </Button>
           </div>
@@ -774,18 +774,18 @@ const Properties = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-primary-foreground mb-6">
+      <section className="py-12 sm:py-16 lg:py-20 bg-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground mb-4 sm:mb-6">
             Didn't Find What You're Looking For?
           </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8">
+          <p className="text-base sm:text-lg lg:text-xl text-primary-foreground/90 mb-6 sm:mb-8 px-4">
             Our expert team can help you find the perfect property that matches 
             your specific requirements and budget.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+919876543210">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <a href="tel:+919876543210" className="w-full sm:w-auto">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto">
                 Contact Us
               </Button>
             </a>

@@ -7,42 +7,42 @@ import bannerImage from "@/assets/banner1.png";
 const NewProject = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
-      {/* Banner Section - Fullscreen */}
-      <section className="relative h-screen overflow-hidden">
+      {/* Banner Section - Responsive height */}
+      <section className="relative h-[35vh] sm:h-[30vh] md:h-[80vh] lg:h-[85vh] xl:h-screen overflow-hidden mt-14 sm:mt-16 lg:mt-18">
         {/* Banner Image */}
         <div className="w-full h-full">
           <img
             src={bannerImage}
-            alt="New Project Banner"
-            className="w-full h-full object-cover"
+            alt="Plan M Banner"
+            className="w-full h-full object-cover object-center"
           />
         </div>
       </section>
 
       {/* Advanced Contact Form Section */}
-      <section className="py-20 px-4">
+      <section className="py-10 sm:py-16 lg:py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-3xl shadow-2xl border border-primary/10 overflow-hidden">
+          <div className="bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl border border-primary/10 overflow-hidden">
             {/* Form Header */}
-            <div className="bg-gradient-to-r from-primary to-accent px-8 py-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-white text-center">
+            <div className="bg-gradient-to-r from-primary to-accent px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white text-center leading-tight">
                 Interested to buy property in Plan M Business Park?
               </h2>
-              <p className="text-white/90 text-center mt-2 text-lg">
+              <p className="text-white/90 text-center mt-2 text-sm sm:text-base lg:text-lg">
                 Fill your details & our property experts will call you.
               </p>
             </div>
 
             {/* Form Content */}
-            <div className="p-8 md:p-12">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-4 sm:p-6 md:p-8 lg:p-12">
+              <form className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                   {/* Full Name */}
                   <div className="space-y-2">
                     <Input
                       type="text"
                       placeholder="Full Name"
-                      className="h-14 px-4 text-base border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-0 transition-all duration-300 hover:border-primary/50"
+                      className="h-12 sm:h-14 px-3 sm:px-4 text-sm sm:text-base border-2 border-slate-200 rounded-lg sm:rounded-xl focus:border-primary focus:ring-0 transition-all duration-300 hover:border-primary/50"
                     />
                   </div>
 
@@ -51,7 +51,7 @@ const NewProject = () => {
                     <Input
                       type="email"
                       placeholder="Email"
-                      className="h-14 px-4 text-base border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-0 transition-all duration-300 hover:border-primary/50"
+                      className="h-12 sm:h-14 px-3 sm:px-4 text-sm sm:text-base border-2 border-slate-200 rounded-lg sm:rounded-xl focus:border-primary focus:ring-0 transition-all duration-300 hover:border-primary/50"
                     />
                   </div>
 
@@ -60,27 +60,27 @@ const NewProject = () => {
                     <Input
                       type="tel"
                       placeholder="Phone / Mobile"
-                      className="h-14 px-4 text-base border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-0 transition-all duration-300 hover:border-primary/50"
+                      className="h-12 sm:h-14 px-3 sm:px-4 text-sm sm:text-base border-2 border-slate-200 rounded-lg sm:rounded-xl focus:border-primary focus:ring-0 transition-all duration-300 hover:border-primary/50"
                     />
                   </div>
 
                   {/* Property Type Dropdown */}
                   <div className="space-y-2">
                     <Select>
-                      <SelectTrigger className="h-14 px-4 text-base border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-0 transition-all duration-300 hover:border-primary/50">
+                      <SelectTrigger className="h-12 sm:h-14 px-3 sm:px-4 text-sm sm:text-base border-2 border-slate-200 rounded-lg sm:rounded-xl focus:border-primary focus:ring-0 transition-all duration-300 hover:border-primary/50">
                         <SelectValue placeholder="I am looking for" />
                       </SelectTrigger>
-                      <SelectContent className="rounded-xl border-2 border-primary/20">
-                        <SelectItem value="office" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
+                      <SelectContent className="rounded-lg sm:rounded-xl border-2 border-primary/20">
+                        <SelectItem value="office" className="text-sm sm:text-base py-2 sm:py-3 px-3 sm:px-4 hover:bg-primary/5 focus:bg-primary/10">
                           Office
                         </SelectItem>
-                        <SelectItem value="shop" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
+                        <SelectItem value="shop" className="text-sm sm:text-base py-2 sm:py-3 px-3 sm:px-4 hover:bg-primary/5 focus:bg-primary/10">
                           Shop
                         </SelectItem>
-                        <SelectItem value="retail" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
+                        <SelectItem value="retail" className="text-sm sm:text-base py-2 sm:py-3 px-3 sm:px-4 hover:bg-primary/5 focus:bg-primary/10">
                           Retail
                         </SelectItem>
-                        <SelectItem value="showroom" className="text-base py-3 px-4 hover:bg-primary/5 focus:bg-primary/10">
+                        <SelectItem value="showroom" className="text-sm sm:text-base py-2 sm:py-3 px-3 sm:px-4 hover:bg-primary/5 focus:bg-primary/10">
                           Showroom
                         </SelectItem>
                       </SelectContent>
@@ -253,33 +253,33 @@ const NewProject = () => {
       </section>
 
       {/* Amenities Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <section className="py-10 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100">
         <div className="max-w-7xl mx-auto px-4">
           
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4">
+          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-2 sm:mb-4">
               AMENITIES
             </h2>
-            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4 sm:mb-6">
               MOVE ALL A NOTCH HIGHER
             </h3>
-            <div className="max-w-5xl mx-auto text-center mb-8">
-              <p className="text-lg text-slate-600 leading-relaxed">
+            <div className="max-w-5xl mx-auto text-center mb-6 sm:mb-8">
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed px-2">
                 Experience the difference of a workspace that prioritizes your well-being and fosters a healthy work-life balance.
               </p>
-              <p className="text-lg text-slate-600 leading-relaxed mt-2">
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed mt-2 px-2">
                 We understand that achieving work-life balance is essential for both personal well-being and professional success. That's why we're committed for creating commercial and retail spaces.
               </p>
             </div>
           </div>
 
           {/* Amenities Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-10 sm:mb-16">
             
-            {/* First Row - Taller Cards without tags */}
-            <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-              <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+            {/* First Row - Responsive Cards */}
+            <div className="relative group overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500">
+              <div className="aspect-[4/5] sm:aspect-[7/10] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-1.jpg"
                   alt="Cafeteria"
@@ -289,8 +289,8 @@ const NewProject = () => {
               </div>
             </div>
 
-            <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-              <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+            <div className="relative group overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500">
+              <div className="aspect-[4/5] sm:aspect-[7/10] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-2.jpg"
                   alt="Gymnasium"
@@ -300,8 +300,8 @@ const NewProject = () => {
               </div>
             </div>
 
-            <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-              <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+            <div className="relative group overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500">
+              <div className="aspect-[4/5] sm:aspect-[7/10] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-3.jpg"
                   alt="Food Court"
@@ -311,8 +311,8 @@ const NewProject = () => {
               </div>
             </div>
 
-            <div className="relative group overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-              <div className="aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
+            <div className="relative group overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500">
+              <div className="aspect-[4/5] sm:aspect-[7/10] bg-gradient-to-br from-slate-200 to-slate-300 relative overflow-hidden">
                 <img
                   src="https://planmbusinesspark.com/assets/images/resources/apartment-1-4.jpg"
                   alt="Spa"
