@@ -15,10 +15,10 @@ const About = () => {
       title: "Our Vision",
       description: "To be the most trusted and preferred real estate partner in Mumbai Metropolitan Region, known for innovation and customer satisfaction."
     },
-    {
+      {
       icon: <Heart className="h-8 w-8" />,
       title: "Our Values",
-      description: "Integrity, Excellence, Innovation, and Customer-centricity form the foundation of everything we do at Araam Properties."
+      description: "Integrity, Excellence, Innovation, and Customer-centricity form the foundation of everything we do at Aaraam Properties."
     }
   ];
 
@@ -57,13 +57,13 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">
-              About Araam Properties
+              About Aaraam Properties
             </Badge>
             <h1 className="text-5xl font-bold text-white mb-6">
               Building Dreams, Creating Homes
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              With over 15 years of experience in the real estate industry, Araam Properties 
+              <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              With over 15 years of experience in the real estate industry, Aaraam Properties 
               has established itself as a trusted name in premium residential and commercial 
               real estate solutions across Mumbai, Navi Mumbai, and Thane.
             </p>
@@ -78,7 +78,7 @@ const About = () => {
             <div>
               <h2 className="text-4xl font-bold mb-6">Who We Are</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Araam Properties is a leading real estate company specializing in premium 
+                Aaraam Properties is a leading real estate company specializing in premium 
                 residential and commercial properties. Founded in 2008, we have been 
                 instrumental in shaping the real estate landscape of Mumbai Metropolitan Region.
               </p>
@@ -101,7 +101,7 @@ const About = () => {
             <div className="relative">
               <img 
                 src={officeImage} 
-                alt="Araam Properties Office" 
+                alt="Aaraam Properties Office" 
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-xl">
@@ -190,7 +190,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="section-title text-center">Why Choose Araam Properties</h2>
+            <h2 className="section-title text-center">Why Choose Aaraam Properties</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Our commitment to excellence and customer satisfaction sets us apart in the real estate industry
             </p>
@@ -236,8 +236,8 @@ const About = () => {
       <section className="py-20 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Work With Us?</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Experience the Araam Properties difference. Let our expert team help you 
+            <p className="text-xl text-muted-foreground mb-8">
+            Experience the Aaraam Properties difference. Let our expert team help you 
             find your perfect property or achieve the best value for your investment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

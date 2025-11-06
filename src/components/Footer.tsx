@@ -9,13 +9,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 sm:col-span-2 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent-foreground/10 rounded-lg flex items-center justify-center shadow-md border border-accent-foreground/20">
-                <span className="text-accent-foreground font-bold text-lg sm:text-xl">A</span>
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                AA
               </div>
-              <div>
-                <h2 className="text-xl sm:text-2xl font-bold">Araam Properties</h2>
-                <p className="text-sm sm:text-base text-primary-foreground/80">Premium Real Estate Solutions</p>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-bold">Aaraam Properties</h2>
             </div>
             <p className="text-sm sm:text-base text-accent-foreground/80 mb-4 sm:mb-6 max-w-md">
               Your trusted partner in finding the perfect property. We specialize in premium 
@@ -69,7 +66,7 @@ const Footer = () => {
   <div className="border-t border-accent-foreground/20 mt-6 sm:mt-8 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-accent-foreground/70 text-xs sm:text-sm text-center md:text-left">
-              © 2025 Araam Properties. All rights reserved.
+              © 2025 Aaraam Properties. All rights reserved.
             </p>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
               <Link to="/privacy-policy" className="text-accent-foreground/70 hover:text-accent-foreground text-xs sm:text-sm transition-colors text-center">

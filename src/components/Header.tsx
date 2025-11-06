@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 // Removed unused icon imports after simplifying header styling
 // Updated to use PNG logo as requested
-import araamLogo from "@/assets/logo.png";
+import araamLogo from "@/assets/Logo1.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

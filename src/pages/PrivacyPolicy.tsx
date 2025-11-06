@@ -38,7 +38,7 @@ const PrivacyPolicy = () => {
 
             <h2>1. Information We Collect</h2>
             <p>
-              At Aaraam Property, we collect information that you provide directly to us, such as when you create an account, fill out a form, or contact us for support. This may include your name, email address, phone number, address, and property preferences.
+              At Aaraam Properties, we collect information that you provide directly to us, such as when you create an account, fill out a form, or contact us for support. This may include your name, email address, phone number, address, and property preferences.
             </p>
 
             <h2>2. How We Use Your Information</h2>
@@ -60,7 +60,7 @@ const PrivacyPolicy = () => {
               <li>With your consent or at your direction</li>
               <li>With third-party vendors, consultants, and service providers who need access to such information to carry out work on our behalf</li>
               <li>To comply with laws or respond to lawful requests and legal process</li>
-              <li>To protect the rights and property of Aaraam Property, our users, and others</li>
+              <li>To protect the rights and property of Aaraam Properties, our users, and others</li>
             </ul>
 
             <h2>4. Data Security</h2>

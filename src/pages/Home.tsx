@@ -158,7 +158,7 @@ const Home = () => {
       role: "Business Owner",
       location: "Navi Mumbai",
       rating: 5,
-      content: "Aaraam Property made our home buying journey incredibly smooth. Their team was professional, transparent, and helped us find the perfect villa in Kharghar. The legal verification process was thorough, and they assisted us till the very end.",
+      content: "Aaraam Properties made our home buying journey incredibly smooth. Their team was professional, transparent, and helped us find the perfect villa in Kharghar. The legal verification process was thorough, and they assisted us till the very end.",
       image: "/api/placeholder/80/80",
       purchaseYear: "2024"
     },
@@ -198,7 +198,7 @@ const Home = () => {
       role: "Entrepreneur",
       location: "CBD Belapur",
       rating: 5,
-      content: "Aaraam Property exceeded our expectations. Their attention to detail, market expertise, and customer service is outstanding. They helped us get the best deal for our office space purchase.",
+      content: "Aaraam Properties exceeded our expectations. Their attention to detail, market expertise, and customer service is outstanding. They helped us get the best deal for our office space purchase.",
       image: "/api/placeholder/80/80",
       purchaseYear: "2024"
     }
@@ -493,7 +493,7 @@ const Home = () => {
             {/* Fallback image for browsers that block autoplay */}
             <img 
               src={heroImage}
-              alt="Luxury property exterior showcasing modern architecture and premium amenities - Aaraam Property featured development"
+              alt="Luxury property exterior showcasing modern architecture and premium amenities - Aaraam Properties featured development"
               className="w-full h-full object-cover"
             />
           </video>
@@ -712,7 +712,7 @@ const Home = () => {
                 <h3 className="text-2xl font-bold text-foreground">About Us</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-muted-foreground leading-relaxed">
                   <p>
-                    At Aaraam Property, we believe that finding your dream home should be an exciting and seamless journey. With 15+ years of experience, we have helped thousands of buyers, sellers, and investors navigate the dynamic Mumbai real estate market.
+                    At Aaraam Properties, we believe that finding your dream home should be an exciting and seamless journey. With 15+ years of experience, we have helped thousands of buyers, sellers, and investors navigate the dynamic Mumbai real estate market.
                   </p>
                   <p>
                     Whether you're looking for a cozy apartment, a luxury villa, or a prime commercial space, our team is committed to providing expert guidance and personalized service every step of the way.
@@ -1010,7 +1010,7 @@ const Home = () => {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose Aaraam Property?</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose Aaraam Properties?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Experience excellence in real estate with our proven track record and customer-first approach
             </p>

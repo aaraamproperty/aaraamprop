@@ -38,12 +38,12 @@ const TermsAndConditions = () => {
 
             <h2>1. Acceptance of Terms</h2>
             <p>
-              By accessing and using the Aaraam Property website and services, you accept and agree to be bound by the terms and provision of this agreement. These terms constitute a legally binding agreement between you and Aaraam Property.
+              By accessing and using the Aaraam Properties website and services, you accept and agree to be bound by the terms and provision of this agreement. These terms constitute a legally binding agreement between you and Aaraam Properties.
             </p>
 
             <h2>2. Use License</h2>
             <p>
-              Permission is granted to temporarily download one copy of the materials on Aaraam Property's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+              Permission is granted to temporarily download one copy of the materials on Aaraam Properties's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
             </p>
             <ul>
               <li>Modify or copy the materials</li>
@@ -54,7 +54,7 @@ const TermsAndConditions = () => {
 
             <h2>3. Property Information Disclaimer</h2>
             <p>
-              While we strive to provide accurate and up-to-date information about properties, Araam Properties makes no representations or warranties regarding the accuracy, completeness, or suitability of the information provided. Property details, prices, and availability are subject to change without notice.
+              While we strive to provide accurate and up-to-date information about properties, Aaraam Properties makes no representations or warranties regarding the accuracy, completeness, or suitability of the information provided. Property details, prices, and availability are subject to change without notice.
             </p>
 
             <h2>4. User Responsibilities</h2>
@@ -69,12 +69,12 @@ const TermsAndConditions = () => {
 
             <h2>5. Booking and Transactions</h2>
             <p>
-              All property bookings and transactions are subject to verification and approval. Araam Properties reserves the right to cancel or refuse any booking at its discretion. Payment terms and conditions will be clearly communicated at the time of booking.
+              All property bookings and transactions are subject to verification and approval. Aaraam Properties reserves the right to cancel or refuse any booking at its discretion. Payment terms and conditions will be clearly communicated at the time of booking.
             </p>
 
             <h2>6. Limitation of Liability</h2>
             <p>
-              In no event shall Araam Properties or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website, even if Araam Properties or an authorized representative has been notified orally or in writing of the possibility of such damage.
+              In no event shall Aaraam Properties or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website, even if Aaraam Properties or an authorized representative has been notified orally or in writing of the possibility of such damage.
             </p>
 
             <h2>7. Privacy Policy</h2>
@@ -84,12 +84,12 @@ const TermsAndConditions = () => {
 
             <h2>8. Indemnification</h2>
             <p>
-              You agree to indemnify and hold Araam Properties harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your use of our services, your violation of these terms, or your violation of any rights of another.
+              You agree to indemnify and hold Aaraam Properties harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your use of our services, your violation of these terms, or your violation of any rights of another.
             </p>
 
             <h2>9. Modifications to Terms</h2>
             <p>
-              Araam Properties may revise these terms of service at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.
+              Aaraam Properties may revise these terms of service at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.
             </p>
 
             <h2>10. Governing Law</h2>

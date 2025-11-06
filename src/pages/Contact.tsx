@@ -110,7 +110,7 @@ const Contact = () => {
               Get In Touch
             </Badge>
             <h1 className="text-5xl font-bold text-white mb-6">
-              Contact Araam Properties
+              Contact Aaraam Properties
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Ready to find your dream property? Our expert team is here to help you 
