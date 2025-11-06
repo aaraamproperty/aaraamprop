@@ -28,7 +28,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
           {/* Brand Logo (optimized sizing & accessibility) */}
           <Link to="/" className="flex items-center group" aria-label="Aaraam Properties Home">
-            <div className="relative flex items-center h-10 sm:h-12 lg:h-14">
+            <div className="relative flex items-center h-12 sm:h-12 lg:h-14">
               {/* Use picture for future WebP support (can add a .webp later) */}
               <picture>
                 {/* <source srcSet={logoWebp} type="image/webp" /> */}
@@ -40,7 +40,7 @@ const Header = () => {
                   decoding="async"
                   fetchPriority="high"
                   draggable="false"
-                  className="h-full w-auto max-h-10 sm:max-h-12 lg:max-h-16 object-contain select-none drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  className="h-full w-auto max-h-12 sm:max-h-12 lg:max-h-16 object-contain select-none drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
                 />
               </picture>
             </div>
