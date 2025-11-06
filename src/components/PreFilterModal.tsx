@@ -126,7 +126,7 @@ const PreFilterModal = ({ isOpen, onClose }: PreFilterModalProps) => {
             <div className="w-full lg:w-1/2 p-3 sm:p-4 lg:p-6 flex flex-col justify-center">
               <div className="mb-3 sm:mb-4">
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-2">
-                  Welcome to Araam Dream Dwellings
+                  Welcome to Aaraam Properties
                 </h2>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-1">Step 1 of 2</p>
                 <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2">Choose Your Location</h3>
