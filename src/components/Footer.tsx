@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="col-span-1 sm:col-span-2 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                AA
+                AP
               </div>
               <h2 className="text-xl sm:text-2xl font-bold">Aaraam Properties</h2>
             </div>
