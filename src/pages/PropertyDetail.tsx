@@ -73,7 +73,7 @@ const PropertyDetail = () => {
     agent: {
       name: "Rajesh Kumar",
       phone: "+91 81041 24183",
-      email: "rajesh@araamproperties.com",
+      email: "rajesh@aaraamproperties.com",
       experience: "15+ Years"
     }
   };

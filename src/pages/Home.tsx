@@ -1516,7 +1516,7 @@ const Home = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Email Us</p>
-                    <p className="text-muted-foreground">info@araamproperties.com</p>
+                    <p className="text-muted-foreground">info@aaraamproperties.com</p>
                   </div>
                 </div>
                 

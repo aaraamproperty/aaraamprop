@@ -62,7 +62,7 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      details: ["info@araamproperties.com", "sales@araamproperties.com"],
+      details: ["info@aaraamproperties.com", "sales@aaraamproperties.com"],
       description: "We'll respond within 2 hours"
     },
     {
@@ -84,19 +84,19 @@ const Contact = () => {
       location: "Navi Mumbai (Head Office)",
       address: "Office no. 3108, Plan S Business Park, MIDC Industrial Area, Shiravane, Nerul, Navi Mumbai, Maharashtra 400706",
       phone: "+91 98765 43210",
-      email: "navimumbai@araamproperties.com"
+      email: "navimumbai@aaraamproperties.com"
     },
     {
       location: "Mumbai Branch",
       address: "Suite 456, Commercial Complex, Andheri East, Mumbai - 400069",
       phone: "+91 98765 43211", 
-      email: "mumbai@araamproperties.com"
+      email: "mumbai@aaraamproperties.com"
     },
     {
       location: "Thane Branch",
       address: "Office 789, Business Plaza, Thane West, Thane - 400601",
       phone: "+91 98765 43212",
-      email: "thane@araamproperties.com"
+      email: "thane@aaraamproperties.com"
     }
   ];
 

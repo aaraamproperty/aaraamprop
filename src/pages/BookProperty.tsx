@@ -61,7 +61,7 @@ const BookProperty = () => {
     agent: {
       name: "Rajesh Kumar",
       phone: "+91 98765 43210",
-      email: "rajesh@araamproperties.com"
+      email: "rajesh@aaraamproperties.com"
     }
   };
 

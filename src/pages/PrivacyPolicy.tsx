@@ -98,7 +98,7 @@ const PrivacyPolicy = () => {
               If you have any questions about this privacy policy, please contact us at:
             </p>
             <ul>
-              <li>Email: privacy@araamproperties.com</li>
+              <li>Email: privacy@aaraamproperties.com</li>
               <li>Phone: +91 81041 24183 / +91 9136636577</li>
               <li>Address: Office No. 123, Business Center, Navi Mumbai - 400614</li>
             </ul>
